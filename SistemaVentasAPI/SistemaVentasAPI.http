@@ -1,6 +1,6 @@
 @SistemaVentasAPI_HostAddress = http://localhost:5289
 
-GET {{SistemaVentasAPI_HostAddress}}/weatherforecast/
+GET {{SistemaVentasAPI_HostAddress}}/api/clientes
 Accept: application/json
 
 ###

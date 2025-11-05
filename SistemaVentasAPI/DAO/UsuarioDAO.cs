@@ -34,7 +34,7 @@ namespace SistemaVentasAPI.DAO
                 {
                     Id = Convert.ToInt32(dr["IdUsuario"]),
                     NombreUsuario = dr["NombreUsuario"].ToString()!,
-                    Rol = dr["IdRol"].ToString()!
+                    Rol = dr["NombreRol"].ToString()!
                 };
             }
 
