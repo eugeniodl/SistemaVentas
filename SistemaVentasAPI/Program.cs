@@ -1,6 +1,40 @@
+using Microsoft.IdentityModel.Tokens;
+using SistemaVentasAPI.DAO;
+using SistemaVentasAPI.Data;
+using SistemaVentasAPI.Services;
+using SistemaVentasAPI.Services.Interfaces;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var jwtConfig = builder.Configuration.GetSection("Jwt");
+var key = Encoding.UTF8.GetBytes(jwtConfig["Key"]!);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = "JwtBearer";
+    options.DefaultChallengeScheme = "JwtBearer";
+})
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtConfig["Issuer"],
+            ValidAudience = jwtConfig["Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
+builder.Services.AddSingleton<ConexionDB>();
+builder.Services.AddScoped<UsuarioDAO>();
+builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
