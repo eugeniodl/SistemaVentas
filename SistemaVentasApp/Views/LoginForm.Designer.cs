@@ -38,23 +38,24 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(33, 31);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(33, 34);
             label1.Name = "label1";
-            label1.Size = new Size(83, 28);
+            label1.Size = new Size(89, 28);
             label1.TabIndex = 0;
             label1.Text = "Usuario:";
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(163, 35);
+            txtUserName.Location = new Point(163, 38);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(158, 27);
             txtUserName.TabIndex = 1;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(163, 85);
+            txtPassword.Location = new Point(163, 89);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(158, 27);
             txtPassword.TabIndex = 3;
@@ -63,28 +64,33 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(33, 81);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(33, 85);
             label2.Name = "label2";
-            label2.Size = new Size(114, 28);
+            label2.Size = new Size(123, 28);
             label2.TabIndex = 2;
             label2.Text = "Contraseña:";
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(227, 135);
+            btnLogin.BackColor = Color.Green;
+            btnLogin.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(135, 143);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(94, 29);
+            btnLogin.Size = new Size(186, 45);
             btnLogin.TabIndex = 4;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Text = "LOGIN";
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(354, 194);
+            BackgroundImage = Properties.Resources.fondo_gris_degradado_color_suave;
+            ClientSize = new Size(354, 200);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(label2);

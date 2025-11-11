@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVentasApp.Models.Repository.Interfaces
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
         Task<string> AuthenticateUserAsync(string username, string password);
     }

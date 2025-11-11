@@ -43,7 +43,7 @@ namespace SistemaVentasApp
                 _apiClient.SetAuthToken(token);
 
                 Hide();
-                var mainForm = new MainForm();
+                var mainForm = new ClienteForm(_apiClient);
                 mainForm.Show();
             }
             else

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVentasApp.Controllers
 {
-    internal class ApiClient
+    public class ApiClient
     {
         private readonly HttpClient _httpClient;
         public IUserRepository LoginUsers { get; }
