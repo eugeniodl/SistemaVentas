@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentasAPI", "SistemaVentasAPI\SistemaVentasAPI.csproj", "{B38F914E-B5BD-4B8A-9297-662E7B1B7847}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentasApp", "SistemaVentasApp\SistemaVentasApp.csproj", "{1F9C1F9E-06C0-81F1-7B39-BFE8DF7DEE60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B38F914E-B5BD-4B8A-9297-662E7B1B7847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B38F914E-B5BD-4B8A-9297-662E7B1B7847}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B38F914E-B5BD-4B8A-9297-662E7B1B7847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F9C1F9E-06C0-81F1-7B39-BFE8DF7DEE60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F9C1F9E-06C0-81F1-7B39-BFE8DF7DEE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F9C1F9E-06C0-81F1-7B39-BFE8DF7DEE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F9C1F9E-06C0-81F1-7B39-BFE8DF7DEE60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
