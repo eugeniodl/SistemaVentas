@@ -8,5 +8,6 @@
         public const string SP_OBTENER_CLIENTE_POR_ID = "sp_ObtenerClientePorId";
         public const string SP_ACTUALIZAR_CLIENTE = "sp_ActualizarCliente";
         public const string SP_ELIMINAR_CLIENTE = "sp_EliminarCliente";
+        public const string SP_REPORTE_CLIENTES = "sp_ReporteClientes";
     }
 }

@@ -1,4 +1,5 @@
-﻿using SistemaVentasApp.Models.Repository;
+﻿using SistemaVentasApp.Dto;
+using SistemaVentasApp.Models.Repository;
 using SistemaVentasApp.Models.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace SistemaVentasApp.Controllers
     public class ApiClient
     {
         private readonly HttpClient _httpClient;
+        public IRepository<ClienteDto> Clientes { get; }
 
         public IUserRepository LoginUsers { get; }
 
@@ -26,6 +28,7 @@ namespace SistemaVentasApp.Controllers
             };
             LoginUsers = new UserRepository(_httpClient,
                                "Auth/login");
+            Clientes = new Repository<ClienteDto>(_httpClient, "Clientes");
         }
 
         internal void SetAuthToken(string token)
