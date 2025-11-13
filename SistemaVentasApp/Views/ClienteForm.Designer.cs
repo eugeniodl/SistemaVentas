@@ -92,7 +92,7 @@
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(186, 45);
             btnAdd.TabIndex = 14;
-            btnAdd.Text = "Agregar";
+            btnAdd.Text = "AGREGAR";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
@@ -105,7 +105,7 @@
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(186, 45);
             btnUpdate.TabIndex = 15;
-            btnUpdate.Text = "Actualizar";
+            btnUpdate.Text = "ACTUALIZAR";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
@@ -118,7 +118,7 @@
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(186, 45);
             btnDelete.TabIndex = 16;
-            btnDelete.Text = "Eliminar";
+            btnDelete.Text = "ELIMINAR";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 

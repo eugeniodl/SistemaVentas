@@ -49,7 +49,6 @@ namespace SistemaVentasApp.Models.Repository
                 throw new Exception($"Error al validar las credenciales. " +
                     $"Respuesta: {errorData}");
             }
-
         }
     }
 }
