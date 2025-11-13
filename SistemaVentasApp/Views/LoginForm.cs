@@ -28,28 +28,40 @@ namespace SistemaVentasApp
 
         private async Task LoginAsync()
         {
-            string username = txtUserName.Text;
-            string password = txtPassword.Text;
+            string username = txtUserName.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
-            var token =
-                await _apiClient.LoginUsers.AuthenticateUserAsync(username, password);
-
-            if(!string.IsNullOrEmpty(token))
+            try
             {
-                MessageBox.Show("Inicio de sesión exitoso.", "Éxito",
-                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var token = await _apiClient.LoginUsers.AuthenticateUserAsync(username, password);
 
-                // Guardar el token en ApiClient para futuras solicitudes
-                _apiClient.SetAuthToken(token);
+                if (!string.IsNullOrEmpty(token))
+                {
+                    MessageBox.Show("Inicio de sesión exitoso.", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Hide();
-                var mainForm = new ClienteForm(_apiClient);
-                mainForm.Show();
+                    // Guardar el token en ApiClient para futuras solicitudes
+                    _apiClient.SetAuthToken(token);
+
+                    Hide();
+                    var mainForm = new ReporteClienteForm(_apiClient);
+                    mainForm.Show();
+                }
             }
-            else
+            catch (HttpRequestException ex)
             {
-                MessageBox.Show("Error en el inicio de sesión. Verifique sus credenciales.", "Error",
-                                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"No se pudo conectar con el servidor. Detalles: {ex.Message}",
+                    "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (TaskCanceledException)
+            {
+                MessageBox.Show("La solicitud al servidor tardó demasiado. Intente de nuevo más tarde.",
+                    "Tiempo de espera agotado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al intentar iniciar sesión:\n{ex.Message}",
+                    "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

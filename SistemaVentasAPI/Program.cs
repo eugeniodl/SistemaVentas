@@ -42,11 +42,15 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddSingleton<ConexionDB>();
 builder.Services.AddScoped<UsuarioDAO>();
 builder.Services.AddScoped<ClienteDAO>();
+builder.Services.AddScoped<ReportesDAO>();
+
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<ClienteService>();
+
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IRepository<Cliente>, ClienteDAO>();
 builder.Services.AddScoped<IService<Cliente>, ClienteService>();
+builder.Services.AddScoped<IReporteService, ReporteService>();
 
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 

@@ -25,7 +25,9 @@ namespace SistemaVentasAPI.DAO
                 {
                     IdCliente = Convert.ToInt32(reader["id_cliente"]),
                     PNombre = reader["p_nombre"].ToString() ?? "",
+                    SNombre = reader["s_nombre"].ToString() ?? "",
                     PApellido = reader["p_apellido"].ToString() ?? "",
+                    SApellido = reader["s_apellido"].ToString() ?? "",
                     Correo = reader["correo"].ToString() ?? "",
                     Telefono = reader["telefono"] == DBNull.Value ? null : reader["telefono"].ToString(),
                 };

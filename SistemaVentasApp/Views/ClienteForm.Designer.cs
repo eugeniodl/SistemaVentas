@@ -76,9 +76,12 @@
             dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCliente.Location = new Point(47, 355);
             dgvCliente.Name = "dgvCliente";
+            dgvCliente.ReadOnly = true;
             dgvCliente.RowHeadersWidth = 51;
+            dgvCliente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCliente.Size = new Size(849, 248);
             dgvCliente.TabIndex = 17;
+            dgvCliente.CellClick += dgvCliente_CellClick;
             // 
             // btnAdd
             // 
@@ -89,8 +92,9 @@
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(186, 45);
             btnAdd.TabIndex = 14;
-            btnAdd.Text = "Agregar";
+            btnAdd.Text = "AGREGAR";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
@@ -101,8 +105,9 @@
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(186, 45);
             btnUpdate.TabIndex = 15;
-            btnUpdate.Text = "Actualizar";
+            btnUpdate.Text = "ACTUALIZAR";
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
@@ -113,8 +118,9 @@
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(186, 45);
             btnDelete.TabIndex = 16;
-            btnDelete.Text = "Eliminar";
+            btnDelete.Text = "ELIMINAR";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // txtPNombre
             // 
@@ -246,6 +252,7 @@
             Controls.Add(label1);
             Name = "ClienteForm";
             Text = "ClienteForm";
+            Load += ClienteForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
             ResumeLayout(false);
             PerformLayout();
