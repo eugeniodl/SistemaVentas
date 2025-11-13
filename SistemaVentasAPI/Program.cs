@@ -1,8 +1,11 @@
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SistemaVentasAPI;
 using SistemaVentasAPI.DAO;
+using SistemaVentasAPI.DAO.Interfaces;
 using SistemaVentasAPI.Data;
 using SistemaVentasAPI.Middleware;
+using SistemaVentasAPI.Models;
 using SistemaVentasAPI.Services;
 using SistemaVentasAPI.Services.Interfaces;
 using System.Text;
@@ -35,9 +38,18 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddSingleton<ConexionDB>();
 builder.Services.AddScoped<UsuarioDAO>();
-builder.Services.AddScoped<JwtService>();
-builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<ClienteDAO>();
+builder.Services.AddScoped<ReportesDAO>();
 
+builder.Services.AddScoped<ClienteService>();
+builder.Services.AddScoped<JwtService>();
+
+builder.Services.AddScoped<IRepository<Cliente>, ClienteDAO>();
+builder.Services.AddScoped<IService<Cliente>, ClienteService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IReporteService, ReporteService>();
+
+builder.Services.AddAutoMapper(typeof(MappingConfig));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
